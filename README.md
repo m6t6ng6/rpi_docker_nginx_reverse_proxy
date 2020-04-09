@@ -11,12 +11,12 @@ web1:
 #- /home/pi/git/docker/docker-share/html1/maintenance:/usr/share/nginx/html:ro  # MAINTENANCE
 
 web2:
-- /home/pi/git/docker/docker-share/html2/production:/usr/share/nginx/html:ro.   # PRODUCTION
+- /home/pi/git/docker/docker-share/html2/production:/usr/share/nginx/html:ro    # PRODUCTION
 #- /home/pi/git/docker/docker-share/html2/maintenance:/usr/share/nginx/html:ro  # MAINTENANCE
 
 webN:
 
-- /home/pi/git/docker/docker-share/htmlN/production:/usr/share/nginx/html:ro.   # PRODUCTION
+- /home/pi/git/docker/docker-share/htmlN/production:/usr/share/nginx/html:ro    # PRODUCTION
 #- /home/pi/git/docker/docker-share/htmlN/maintenance:/usr/share/nginx/html:ro  # MAINTENANCE
 
 DOCKER-COMPOSE volumes:
