@@ -24,34 +24,17 @@ nginx-proxy:
       #environment:
       #- DEFAULT_EMAIL=ferna2909@hotmail.com
 
-zabbix:
-  image: majormjr/rpi-zabbix
-  restart: always
-  ports:
-    - "2812:2812"
-    - "10051:10051"
-    - "10052:10052"
-  expose:
-    - "80"
-  environment:
-    - VIRTUAL_HOST=zabbix
-    - LETSENCRYPT_HOST=raspy
-    - LETSENCRYPT_EMAIL=ferna2909@hotmail.com
-  
-
 www1:
   image: nginx
   restart: always
   expose:
     - "80"
   volumes:
-    # siempre elegir una de las dos (maintenance o production)
-    - /home/pi/git/docker/docker-share/html1/production:/usr/share/nginx/html:ro    # PRODUCCION
+    - /home/pi/git/docker/docker-share/html1/production:/usr/share/nginx/html:ro       # PRODUCCION
       #- /home/pi/git/docker/docker-share/html1/maintenance:/usr/share/nginx/html:ro   # MAINTENANCE
-    #- /home/pi/git/docker/nginx-ssl/1/www:/usr/share/nginx/html:ro
   environment:
-    - VIRTUAL_HOST=raspy
-    - LETSENCRYPT_HOST=raspy
+    - VIRTUAL_HOST=ecommerce-dev
+    - LETSENCRYPT_HOST=ecommerce-dev
     - LETSENCRYPT_EMAIL=ferna2909@hotmail.com
 
 www2:
@@ -60,8 +43,9 @@ www2:
   expose:
     - "80"
   volumes:
-    - /home/pi/git/docker/nginx-ssl/2/www:/usr/share/nginx/html:ro
+    /home/pi/git/docker/docker-share/html2/production:/usr/share/nginx/html:ro         # PRODUCTION 
+    #- /home/pi/git/docker/docker-share/html2/maintenance:/usr/share/nginx/html:ro     # MAINTENANCE 
   environment:
-    - VIRTUAL_HOST=testing
-    - LETSENCRYPT_HOST=testing
+    - VIRTUAL_HOST=dolarhoy-dev
+    - LETSENCRYPT_HOST=dolarhoy-dev
     - LETSENCRYPT_EMAIL=ferna2909@hotmail.com
