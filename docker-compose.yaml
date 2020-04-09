@@ -43,7 +43,7 @@ www2:
   expose:
     - "80"
   volumes:
-    /home/pi/git/docker/docker-share/html2/production:/usr/share/nginx/html:ro         # PRODUCTION 
+    - /home/pi/git/docker/docker-share/html2/production:/usr/share/nginx/html:ro         # PRODUCTION 
     #- /home/pi/git/docker/docker-share/html2/maintenance:/usr/share/nginx/html:ro     # MAINTENANCE 
   environment:
     - VIRTUAL_HOST=dolarhoy-dev
