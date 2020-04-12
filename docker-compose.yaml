@@ -30,8 +30,8 @@ www1:
   expose:
     - "80"
   volumes:
-    - /home/pi/git/docker/docker-share/html1/production:/usr/share/nginx/html:ro       # PRODUCCION
-      #- /home/pi/git/docker/docker-share/html1/maintenance:/usr/share/nginx/html:ro   # MAINTENANCE
+      #- /home/pi/git/docker/docker-share/html1/production:/usr/share/nginx/html:ro       # PRODUCCION
+    - /home/pi/git/docker/docker-share/html1/maintenance:/usr/share/nginx/html:ro   # MAINTENANCE
   environment:
     - VIRTUAL_HOST=ecommerce-dev
     - LETSENCRYPT_HOST=ecommerce-dev
