@@ -49,3 +49,16 @@ www2:
     - VIRTUAL_HOST=dolarhoy-dev
     - LETSENCRYPT_HOST=dolarhoy-dev
     - LETSENCRYPT_EMAIL=ferna2909@hotmail.com
+
+www3:
+  image: nginx
+  restart: always
+  expose:
+    - "80"
+  volumes:
+    - /home/pi/git/docker/docker-share/html3/uade-24-abril-2020:/usr/share/nginx/html:ro        # PRODUCTION
+    #- /home/pi/git/docker/docker-share/html3/maintenance:/usr/share/nginx/html:ro      # MAINTENANCE  
+  environment:
+    - VIRTUAL_HOST=ejercicio-dev
+    - LETSENCRYPT_HOST=ejercicio-dev
+    - LETSENCRYPT_EMAIL=ferna2909@hotmail.com
